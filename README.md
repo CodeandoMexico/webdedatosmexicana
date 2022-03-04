@@ -2,10 +2,9 @@
 
 En este proyecto uniremos los datos de diferentes fuentes para crear una red de datos mexicanos.
 
-[Por qué existe este proyecto]()
+[Por qué existe este proyecto](FAQs.md)
 
 #### FAQs
-- ¿Por qué crear este proyecto?
 - ¿Qué es eso de la web de datos?
 - ¿No se traslapa con datamexico / datos.gob.mx / datamx.io / QuienEsQuien.wiki / otros?
 - ¿Quiénes participan?
