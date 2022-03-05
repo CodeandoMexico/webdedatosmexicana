@@ -18,6 +18,7 @@ Original file is located at
 #
 #############################################################
 
+# Importa y configura el Google Drive
 from google.colab import drive
 drive.mount('/content/drive')
 
@@ -33,17 +34,47 @@ c = json.loads(response.content)
 
 c.keys()
 
+# Extrae los datos que vienen en diccionarios y los asigna a su fila
+
 for key in c.keys():
   print(key) 
   df = pd.DataFrame(c[key])
   if key != 'other-names':
-    if 'name' in df.columns :   
+    if 'name' in df.columns : 
+      
       for i in range(len(df)):  
-        df2 = df.copy()
-        df.name[i] = df2.name[i]['en_US']
+             
+        df.loc[: , 'name'][i]= df.name[i]['en_US']
 
+    if 'abbreviation' in df.columns : 
+      
+      for i in range(len(df)):  
+             
+        df.loc[: , 'abbreviation'][i]= df.abbreviation[i]['en_US']
+
+    if 'title' in df.columns : 
+      
+      for i in range(len(df)):  
+             
+        df.loc[: , 'title'][i]= df.title[i]['en_US']
+ 
+    if 'first_name' in df.columns : 
+      
+      for i in range(len(df)):  
+             
+        df.loc[: , 'first_name'][i]= df.first_name[i]['en_US']
+
+    if 'last_name' in df.columns : 
+      
+      for i in range(len(df)):  
+             
+        df.loc[: , 'last_name'][i]= df.last_name[i]['en_US']
+
+    if 'full_name' in df.columns : 
+      
+      for i in range(len(df)):  
+             
+        df.loc[: , 'full_name'][i]= df.full_name[i]['en_US']
   
   path = 'drive/MyDrive/candidatos/' + key + '.csv'
   df.to_csv(path, index=False)
-
-df = pd.DataFrame('other-names')
