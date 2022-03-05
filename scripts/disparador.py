@@ -3,11 +3,14 @@ import requests, os, urllib
 url = os.getenv('AIRTABLE_URL')
 key = os.getenv('AIRTABLE_KEY')
 
+
 def pide_todo():
-    req = requests.get(url, params=data)
+    req = requests.get(url, params=key)
     if req.status_code != 200:
         print('tira un error')
+        print(req.url)
     else:
+        print("hizo el request a airtable")
         if req.json()['records'][0]['fields']['Wikidata']:
             url_wikidata = req.json()['records'][0]['fields']['Wikidata'][0]
             dispara_wikidata(url_wikidata)
@@ -22,13 +25,13 @@ def dispara_wikidata(args):
     # todo aquí va el script de wikidata
     ##Recibe una URL
     ##Devuelve un archivo de datos (en el formato que sea) para llevar al front
-    return null
+    return ""
 
 def dispara_api_gob(args):
     # todo aquí va el script de api_gob
     ##Recibe una URL
     ##Devuelve un archivo de datos (en el formato que sea) para llevar al front
-    return null
+    return ""
 
 def dispara_qqw(args):
     #Read JSON data into python
@@ -40,3 +43,4 @@ def dispara_qqw(args):
     ##Devuelve un archivo de datos (en el formato que sea) para llevar al front
 
 # todo en dónde guardamos la info?
+pide_todo()
