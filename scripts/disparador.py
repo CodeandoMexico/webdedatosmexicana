@@ -1,4 +1,6 @@
 import requests, os, urllib
+#from wikidata.client import Client
+#wikidataclient = Client()  
 
 url = os.getenv('AIRTABLE_URL')
 key = os.getenv('AIRTABLE_KEY')
@@ -11,20 +13,31 @@ def pide_todo():
         print(req.url)
     else:
         print("hizo el request a airtable")
-        if req.json()['records'][0]['fields']['Wikidata']:
-            url_wikidata = req.json()['records'][0]['fields']['Wikidata'][0]
-            dispara_wikidata(url_wikidata)
-        if req.json()['records'][0]['fields']['API Gobernantes']:
-            url_api_gob = req.json()['records'][0]['fields']['API Gobernantes'][0]
-            dispara_api_gob(url_api_gob)
-        if req.json()['records'][0]['fields']['QQW']:
-            url_wikidata = req.json()['records'][0]['fields']['QQW'][0]
-            dispara_qqw(url_qqw)
+        objs = []
+        records = req.json()['records'];
+        for r in records:
+            fields = r['fields'];
+            obj = {"wikidata": None, "api_gob": None, "qqw": None}
+            if hasattr(fields,'Wikidata'):
+                url_wikidata = fields['Wikidata'][0]
+                obj.wikidata = dispara_wikidata(url_wikidata)
+            if hasattr(fields,'API Gobernantes'):
+                url_api_gob = fields['API Gobernantes'][0]
+                obj["api_gob"] = dispara_api_gob(url_api_gob)
+            if hasattr(fields,'QQW'):
+                url_wikidata = fields['QQW'][0]
+                obj["qqw"] = dispara_qqw(url_qqw)
+        
+            objs.append(obj);
+        return objs
+    
 
 def dispara_wikidata(args):
     # todo aquí va el script de wikidata
     ##Recibe una URL
     ##Devuelve un archivo de datos (en el formato que sea) para llevar al front
+    #entity = wikidataclient.get(args[0], load=True)
+    #return entity
     return ""
 
 def dispara_api_gob(args):
@@ -43,4 +56,5 @@ def dispara_qqw(args):
     ##Devuelve un archivo de datos (en el formato que sea) para llevar al front
 
 # todo en dónde guardamos la info?
-pide_todo()
+objs = pide_todo()
+print (objs)
