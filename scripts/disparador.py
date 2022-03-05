@@ -26,6 +26,9 @@ def dispara_api_gob(args):
 
 def dispara_qqw(args):
     # todo aquí va el script de qqw
-    
+    #Read JSON data into python
+    response = urllib2.urlopen(args[0])
+    data = json.loads(response.read()) 
+    return data
 
 # todo en dónde guardamos la info?
