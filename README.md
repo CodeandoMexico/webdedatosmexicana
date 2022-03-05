@@ -23,7 +23,7 @@ En este proyecto uniremos los datos de diferentes fuentes para crear una red de 
 | --- | --- | --- | --- | 
 | Gobernantes / Representantes | Para tener un perfil completo de nuestros gobernantes, que cubra todos los aspectos de su persona pública: como servidores públicos, como empresarios o contratistas, cuando lo son, como candidatos, cuando compiten por puestos públicos | Entra al canal #odd-civico y llena los datos faltantes en el [Airtable](https://airtable.com/shr3U7qqrDZCE5qQx/tblnaRs3vQSj3yw61) | Ver [issue](https://github.com/CodeandoMexico/webdedatosmexicana/issues/7) |
 | Empresas importantes para la transparencia del país | Para trazar mediante los distintos sistemas que generan información de compras públicas y poder fiscalizarlas mejor | test | test |
-| El árbol de todas dependencias del país | Para tener un directorio limpio y jerarquizado en un sólo lugar, con datos importantes para la fiscalización ciudadana | test | test |
+| El árbol de todas dependencias del país | Para tener un directorio limpio y jerarquizado en un sólo lugar, con datos importantes para la fiscalización ciudadana | Pendiente en siguiente iteración |  Pendiente en siguiente iteración |
 
 
 ## APIs y fuentes de datos
