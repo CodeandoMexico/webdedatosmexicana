@@ -3,7 +3,7 @@ import requests
 url = os.getenv('AIRTABLE_URL')
 key = os.getenv('AIRTABLE_KEY')
 
-def pide_todo
+def pide_todo():
     req = requests.get(url, params=data)
     if req.status_code != 200
         print('tira un error')
@@ -18,13 +18,13 @@ def pide_todo
             url_wikidata = req.json()['records'][0]['fields']['QQW'][0]
             dispara_qqw(url_qqw)
 
-def dispara_wikidata(args)
+def dispara_wikidata(args):
     # todo aquí va el script de wikidata
 
-def dispara_api_gob(args)
+def dispara_api_gob(args):
     # todo aquí va el script de api_gob
 
-def dispara_qqw(args)
+def dispara_qqw(args):
     # todo aquí va el script de qqw
     
 
