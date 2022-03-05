@@ -12,7 +12,10 @@ En este proyecto uniremos los datos de diferentes fuentes para crear una red de 
 
 ## ¿Cómo participo?
 
-Puedes participar buscando a las personas e instituciones de [la lista]() y llenándolas en nuestro formulario.
+- Buscar: Puedes participar buscando a las personas e instituciones de [la lista]() y llenándolas en nuestro formulario.
+- Trabajar en [la maqueta](https://www.figma.com/file/jW9W6A0jFvSHtUqatV9Le2/Wireframing-in-Figma?node-id=0%3A1)  
+- Programar scrappers para jalar datos de Quién es Quién Wiki, API Gobernadores y Wikidata
+- Programar la maqueta
 
 ## La lista
 
