@@ -18,19 +18,19 @@ def pide_todo():
         for r in records:
             fields = r['fields'];
             obj = {"wikidata": None, "api_gob": None, "qqw": None}
-            if hasattr(fields,'Wikidata'):
+            if 'Wikidata' in fields:
                 url_wikidata = fields['Wikidata'][0]
-                obj.wikidata = dispara_wikidata(url_wikidata)
-            if hasattr(fields,'API Gobernantes'):
+                obj["wikidata"] = dispara_wikidata(url_wikidata)
+            if 'API Gobernantes' in fields:
                 url_api_gob = fields['API Gobernantes'][0]
                 obj["api_gob"] = dispara_api_gob(url_api_gob)
-            if hasattr(fields,'QQW'):
+            if 'QQW' in fields:
                 url_wikidata = fields['QQW'][0]
                 obj["qqw"] = dispara_qqw(url_qqw)
         
             objs.append(obj);
         return objs
-    
+
 
 def dispara_wikidata(args):
     # todo aquí va el script de wikidata
@@ -44,12 +44,15 @@ def dispara_api_gob(args):
     # todo aquí va el script de api_gob
     ##Recibe una URL
     ##Devuelve un archivo de datos (en el formato que sea) para llevar al front
-    return ""
+    response = urllib.request.urlopen(args)
+    data = response.read()
+    return data
 
 def dispara_qqw(args):
     #Read JSON data into python
-    response = urllib2.urlopen(args[0])
-    data = json.loads(response.read()) 
+    #response = urllib2.urlopen(args[0])
+    #data = json.loads(response.read()) 
+    data = ""
     return data
 
     ##Recibe una URL
