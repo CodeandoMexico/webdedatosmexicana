@@ -1,0 +1,27 @@
+---
+---
+$rosa-oscuro: rgba(246, 104, 146, .2);
+$blanco: #ffffff;
+$rosa-claro: rgba(244, 187, 211, .7);
+$green: #009688;
+$blue: #312e5f;
+
+.hero {
+  width: 100%;
+  height: 20rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.01rem solid $blanco;
+  background-color: $rosa-claro;
+  background-image: linear-gradient($rosa-oscuro .01rem, transparent .2rem), linear-gradient(90deg, $rosa-oscuro .01rem, transparent .2rem);
+  background-size: 2rem 2rem;
+  background-position: -0.1rem -0.1rem;
+  h1, p {
+    color: $blue;
+  }
+}
+.mexicografo {
+  height: 15rem;
+}

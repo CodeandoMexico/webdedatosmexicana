@@ -1,0 +1,51 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: home
+---
+
+<div class="hero">
+  <div>
+    <h1>Interconexión México</h1>
+    <p>Conectamos datos para generar información de interés público sobre  personas, empresas e instituciones mexicanas. </p>
+    <p>
+      <span class="badge bg-light text-dark">versión 0.01</span>
+    </p>
+    <p>
+      <a type="button" class="btn btn-primary" href="http://github.com/codeandomexico/webdedatosmexicana" target="_blank">Contribuye</a>
+    </p>
+  </div>
+  <div>
+    <img src="assets/images/mexicografo.png" alt="grafo" class="mexicografo">
+  </div>
+</div>
+<div class="container my-5">
+
+  <table class="table table-striped table-hover">
+    <thead>
+
+    <tr>
+      <th scope="col">Entidad</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Wikidata</th>
+      <th scope="col">Api Gobernantes</th>
+      <th scope="col">QuienEsQuien.wiki</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for gobernador in site.data.gobernadores %}
+      <tr>
+        <td scope="row">{{ gobernador.Estado }}</td>
+        <td scope="row">{{ gobernador.Gobernador }}</td>
+        <td scope="row">
+          {{ gobernador.Wikidata }}
+        </td>
+        <td scope="row">{{ gobernador.QQW }}</td>
+        <td scope="row">{{ gobernador.API_Gobernantes }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+  </table>
+</div>
